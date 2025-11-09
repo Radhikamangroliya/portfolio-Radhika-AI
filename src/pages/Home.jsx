@@ -1,0 +1,89 @@
+// -------------------------------------------------------------
+// Home.jsx — Final Neon Hero + AI Card + Parallax Background
+// -------------------------------------------------------------
+
+import React, { useEffect } from "react";
+import "./Home.css";
+
+export default function Home() {
+
+  // ===== Parallax Scroll Effect =====
+  useEffect(() => {
+    const grid = document.querySelector(".grid-bg");
+    const stars = document.querySelector(".stars-bg");
+
+    function handleScroll() {
+      const offset = window.scrollY * 0.15;
+
+      if (grid) grid.style.transform = `translateY(${offset}px)`;
+      if (stars) stars.style.transform = `translateY(${offset * 0.6}px)`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="home-wrapper">
+
+      {/* ===== BACKGROUND LAYERS ===== */}
+      <div className="background-layers">
+
+        {/* Floating particles */}
+        <div className="particles-layer">
+          {[...Array(25)].map((_, i) => (
+            <div
+              key={i}
+              className="particle"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${4 + Math.random() * 6}s`,
+                animationDelay: `${Math.random() * 3}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Stars + Grid */}
+        <div className="stars-bg"></div>
+        <div className="grid-bg"></div>
+      </div>
+
+      {/* ===== HERO LEFT ===== */}
+      <section className="hero-left">
+        <h1 className="hero-title">
+          RADHIKA <br /> MANGROLIYA
+        </h1>
+
+        <h2 className="hero-subtitle">
+          AI Engineer · Full-Stack Developer
+        </h2>
+
+        <p className="hero-tagline">
+          Your AI-powered career assistant.
+        </p>
+
+
+      </section>
+
+      {/* ===== AI CARD RIGHT ===== */}
+      <section className="hero-ai-card">
+        <h3 className="ai-title">RADHIKA 2.0</h3>
+
+        <div className="ai-circle">AI</div>
+
+        <p className="ai-desc">
+          Hello! Ask me anything about Radhika.
+        </p>
+
+        <button
+          className="ai-ask-btn"
+          onClick={() => (window.location.href = "/chat")}
+        >
+          Ask me anything →
+        </button>
+      </section>
+    </div>
+  );
+}

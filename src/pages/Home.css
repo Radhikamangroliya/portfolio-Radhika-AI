@@ -1,0 +1,208 @@
+/* -------------------------------------------------------------
+   Home.css — Final Hero Layout + Particles + Parallax Grid
+-------------------------------------------------------------- */
+
+.home-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 150px 100px 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  background: #050813;
+}
+
+/* ============================
+   Background layers
+=============================== */
+
+.background-layers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stars-bg,
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+/* Stars layer */
+.stars-bg {
+  background-image: url("https://cdn.jsdelivr.net/gh/itsraina/background-assets/stars-bg.png");
+  opacity: 0.25;
+}
+
+/* Neon grid */
+.grid-bg {
+  background-image: url("https://cdn.jsdelivr.net/gh/itsraina/background-assets/neon-grid.png");
+  opacity: 0.3;
+  background-position: bottom;
+}
+
+
+/* ============================
+   Floating Particles
+=============================== */
+
+.particles-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #90d9ff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+}
+
+/* ============================
+   Left Hero Content
+=============================== */
+
+.hero-left {
+  z-index: 5;
+}
+
+.hero-title {
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 0.9;
+  color: #b7d9ff;
+  text-shadow: 0 0 30px #68aee8;
+}
+
+.hero-subtitle {
+  margin-top: 30px;
+  font-size: 26px;
+  color: #86d7ff;
+}
+
+.hero-tagline {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #cf8aff;
+}
+
+.resume-btn {
+  margin-top: 35px;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-size: 17px;
+  background: transparent;
+  border: 1px solid #6bb9ff;
+  color: #8cd3ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resume-btn:hover {
+  background: rgba(110, 179, 255, 0.15);
+}
+
+/* ============================
+   AI Card (Right Side)
+=============================== */
+
+.hero-ai-card {
+  width: 340px;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 20, 60, 0.25);
+  border: 1px solid #5d29ff;
+  box-shadow: 0 0 25px rgba(118, 17, 255, 0.55);
+  text-align: center;
+  z-index: 5;
+}
+
+.ai-title {
+  color: #8dd5ff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ai-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #7840ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8dd3ff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.ai-desc {
+  font-size: 18px;
+  color: #dcd2ff;
+}
+
+.ai-ask-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #8e4bff;
+  background: rgba(100, 30, 255, 0.15);
+  color: #c6a3ff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.ai-ask-btn:hover {
+  background: rgba(140, 64, 255, 0.25);
+  box-shadow: 0 0 15px #8e4bff;
+}
+
+/* ============================
+   Responsive
+=============================== */
+
+@media (max-width: 900px) {
+  .home-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px;
+    height: auto;
+  }
+
+  .hero-ai-card {
+    margin-top: 50px;
+  }
+}

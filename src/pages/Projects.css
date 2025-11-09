@@ -1,0 +1,104 @@
+/* ---------------------------------------------------------------
+   Projects.css – Neon theme + clean layout
+   HUMAN-WRITTEN ✨
+---------------------------------------------------------------- */
+
+.projects-wrapper {
+  padding: 140px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #dbe8ff;
+}
+
+/* =============== PAGE HEADER =============== */
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-title {
+  font-size: 3rem;
+  color: #93caff;
+  text-shadow: 0 0 12px #59adff;
+}
+
+.projects-subtitle {
+  margin-top: 12px;
+  color: #bddcff;
+  font-size: 1.2rem;
+}
+
+/* =============== PROJECT GRID =============== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+}
+
+/* =============== PROJECT CARD =============== */
+
+.project-card {
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(15, 25, 55, 0.7);
+  border: 1px solid #5aafff;
+  box-shadow: 0 0 20px rgba(70, 150, 255, 0.25);
+  transition: 0.3s;
+  animation: fadeIn 0.6s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px rgba(70, 160, 255, 0.35);
+}
+
+.project-title {
+  font-size: 1.5rem;
+  color: #a9d4ff;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 14px;
+  color: #cbe3ff;
+}
+
+/* TAG STYLING */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(100, 160, 255, 0.25);
+  border: 1px solid #6abaff;
+  color: #d6ebff;
+  font-size: 0.85rem;
+}
+
+/* VIEW BUTTON */
+.project-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgba(80, 140, 255, 0.18);
+  border: 1px solid #83c8ff;
+  color: #dff2ff;
+  transition: 0.3s;
+}
+
+.project-btn:hover {
+  box-shadow: 0 0 14px #6ec0ff;
+}
+
+/* =============== ANIMATION =============== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}

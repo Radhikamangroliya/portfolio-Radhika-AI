@@ -1,0 +1,106 @@
+/* ---------------------------------------------------------------------------
+   ExperienceTimeline.css — Neon vertical timeline UI
+   Human-designed, recruiter-friendly, glowing & animated ✨
+--------------------------------------------------------------------------- */
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 40px 1fr;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE — YEAR -------------------------------------------------------- */
+.timeline-year {
+  color: #9fc7ff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* MIDDLE — LINE ----------------------------------------------------------- */
+.timeline-line {
+  position: relative;
+  width: 40px;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: rgba(120, 180, 255, 0.5);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* DOT --------------------------------------------------------------------- */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: #6ec8ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #6ec8ff;
+}
+
+/* RIGHT SIDE — BOX -------------------------------------------------------- */
+.timeline-content {
+  background: rgba(15, 20, 50, 0.65);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 180, 255, 0.4);
+  backdrop-filter: blur(8px);
+  transition: 0.25s;
+}
+
+.box-glow:hover {
+  box-shadow: 0 0 16px rgba(120, 180, 255, 0.6);
+  border-color: rgba(150, 200, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+/* TEXT STYLES ------------------------------------------------------------- */
+.timeline-role {
+  color: #def1ff;
+  font-size: 20px;
+}
+
+.timeline-company {
+  color: #87b8ff;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.timeline-bullets {
+  margin-left: 16px;
+  margin-bottom: 16px;
+  color: #a8c7ff;
+  line-height: 1.55;
+}
+
+/* TAGS -------------------------------------------------------------------- */
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-tag {
+  background: rgba(50, 100, 255, 0.25);
+  border: 1px solid rgba(100, 150, 255, 0.4);
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  color: #d7e8ff;
+}

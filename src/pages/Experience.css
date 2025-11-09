@@ -1,0 +1,54 @@
+/* -------------------------------------------------------------
+   Experience.css — Full Experience Page Styling
+   Clean neon theme matching the entire portfolio design
+-------------------------------------------------------------- */
+
+/* PAGE WRAPPER */
+.experience-wrapper {
+  padding: 80px 20px;
+  min-height: 100vh;
+  background: #0a0f1f;
+  color: #dbe9ff;
+}
+
+/* HEADER SECTION */
+.experience-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.experience-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #cfe6ff;
+  margin-bottom: 10px;
+}
+
+.experience-subtitle {
+  font-size: 18px;
+  color: #8fb4ff;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* TIMELINE WRAPPER (parent container is in ExperienceTimeline.css) */
+.experience-timeline-section {
+  margin-top: 40px;
+}
+
+/* Small screens optimization */
+@media (max-width: 768px) {
+  .experience-title {
+    font-size: 34px;
+  }
+
+  .experience-subtitle {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .experience-wrapper {
+    padding: 60px 15px;
+  }
+}
