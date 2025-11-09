@@ -36,16 +36,16 @@
   pointer-events: none;
 }
 
-/* Stars layer */
+/* ✅ Stars layer from local image */
 .stars-bg {
-  background-image: url("https://cdn.jsdelivr.net/gh/itsraina/background-assets/stars-bg.png");
-  opacity: 0.25;
+  background-image: url("/src/assets/bg/stars-bg.png");
+  opacity: 0.35;
 }
 
-/* Neon grid */
+/* ✅ Neon grid from local image */
 .grid-bg {
-  background-image: url("https://cdn.jsdelivr.net/gh/itsraina/background-assets/neon-grid.png");
-  opacity: 0.3;
+  background-image: url("/src/assets/bg/neon-grid-bg.png");
+  opacity: 0.45;
   background-position: bottom;
 }
 
@@ -85,6 +85,7 @@
   }
 }
 
+
 /* ============================
    Left Hero Content
 =============================== */
@@ -113,24 +114,9 @@
   color: #cf8aff;
 }
 
-.resume-btn {
-  margin-top: 35px;
-  padding: 12px 26px;
-  border-radius: 12px;
-  font-size: 17px;
-  background: transparent;
-  border: 1px solid #6bb9ff;
-  color: #8cd3ff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.resume-btn:hover {
-  background: rgba(110, 179, 255, 0.15);
-}
 
 /* ============================
-   AI Card (Right Side)
+   AI Card
 =============================== */
 
 .hero-ai-card {
@@ -191,7 +177,7 @@
 }
 
 /* ============================
-   Responsive
+   Responsive Layout
 =============================== */
 
 @media (max-width: 900px) {

@@ -1,12 +1,11 @@
 // -------------------------------------------------------------
-// Home.jsx — Final Neon Hero + AI Card + Parallax Background
+// Home.jsx — Neon Hero + Parallax Grid + Stars + Particles
 // -------------------------------------------------------------
 
 import React, { useEffect } from "react";
 import "./Home.css";
 
 export default function Home() {
-
   // ===== Parallax Scroll Effect =====
   useEffect(() => {
     const grid = document.querySelector(".grid-bg");
@@ -14,7 +13,6 @@ export default function Home() {
 
     function handleScroll() {
       const offset = window.scrollY * 0.15;
-
       if (grid) grid.style.transform = `translateY(${offset}px)`;
       if (stars) stars.style.transform = `translateY(${offset * 0.6}px)`;
     }
@@ -28,7 +26,6 @@ export default function Home() {
 
       {/* ===== BACKGROUND LAYERS ===== */}
       <div className="background-layers">
-
         {/* Floating particles */}
         <div className="particles-layer">
           {[...Array(25)].map((_, i) => (
@@ -50,7 +47,7 @@ export default function Home() {
         <div className="grid-bg"></div>
       </div>
 
-      {/* ===== HERO LEFT ===== */}
+      {/* ===== LEFT HERO SECTION ===== */}
       <section className="hero-left">
         <h1 className="hero-title">
           RADHIKA <br /> MANGROLIYA
@@ -63,19 +60,15 @@ export default function Home() {
         <p className="hero-tagline">
           Your AI-powered career assistant.
         </p>
-
-
       </section>
 
-      {/* ===== AI CARD RIGHT ===== */}
+      {/* ===== RIGHT AI CARD ===== */}
       <section className="hero-ai-card">
         <h3 className="ai-title">RADHIKA 2.0</h3>
 
         <div className="ai-circle">AI</div>
 
-        <p className="ai-desc">
-          Hello! Ask me anything about Radhika.
-        </p>
+        <p className="ai-desc">Hello! Ask me anything about Radhika.</p>
 
         <button
           className="ai-ask-btn"
