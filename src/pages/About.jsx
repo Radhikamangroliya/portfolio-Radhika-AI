@@ -1,95 +1,100 @@
-// --------------------------------------------------------------------
-// About.jsx
-// HUMAN-WRITTEN ✨
-// This is Radhika's About page — a clean introduction + highlights.
-// Recruiters read this FIRST after the homepage.
-// --------------------------------------------------------------------
-
 import React from "react";
 import "./About.css";
 
 export default function About() {
   return (
-    <div className="about-wrapper">
+    <div className="about-container">
+      <h1 className="about-title">About Me</h1>
 
-      {/* =============================
-          TITLE SECTION
-      ============================== */}
-      <section className="about-header">
-        <h1 className="about-title">About Me</h1>
-        <p className="about-subtitle">
-          A builder at heart — I use AI, data, and code to create powerful,
-          human-centered digital experiences.
-        </p>
-      </section>
+      <p className="about-subtitle">
+        A builder at heart — I use AI, data, and code to create powerful,
+        human-centered digital experiences.
+      </p>
 
-      {/* =============================
-          CORE STORY
-      ============================== */}
-      <section className="about-story neon-box">
-        <h2>Who I Am</h2>
+      {/* WHO I AM CARD */}
+      <div className="about-card">
+        <h2 className="section-heading">Who I Am</h2>
 
-        <p>
-          I’m <strong>Radhika Mangroliya</strong>, a passionate AI/ML and full-stack
-          developer who loves turning ideas into real, scalable applications.
-        </p>
+          <p>I’m <strong>Radhika Mangroliya</strong>, an AI Engineer and full-stack developer who loves turning complex ideas into intelligent, real-world solutions.
+          </p>
 
-        <p>
-          Whether it’s <strong>building RAG systems</strong>, deploying apps with
-          <strong>cloud + CI/CD</strong>, or designing <strong>clean UX flows</strong>,
-          I’m deeply interested in the intersection of AI and product design.
-        </p>
+          <p>A focused and enthusiastic builder, I work at the intersection of <strong> AI, machine learning, automation, and product engineering</strong>.
+            My passion for this field comes from deeply understanding core concepts
+            and applying them across real projects — from RAG systems and LLM apps
+            to cloud-based automation and full-stack web experiences.
+          </p>
 
-        <p>
-          I thrive in environments where creativity meets engineering — where
-          prototypes evolve into polished products powered by intelligence.
-        </p>
+          <p>
+            I thrive when solving meaningful problems, designing clean user
+            experiences, and building systems that are smart, scalable, and impactful.
+          </p>
 
-        <p>
-          My goal is simple: <strong>use AI to make digital experiences smarter,
-          faster, and more personal.</strong>
-        </p>
-      </section>
 
-      {/* =============================
-          HIGHLIGHT METRICS
-      ============================== */}
-      <section className="about-highlights">
-        <div className="highlight-card">
+        {/* RESUME BUTTONS */}
+        <div className="resume-buttons">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-view"
+          >
+            View Resume
+          </a>
+
+          <a href="/resume.pdf" download className="btn-download">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      {/* STATS */}
+      <div className="stats-container">
+        <div className="stat-card">
           <h3>20+ Projects</h3>
           <p>AI • ML • Data • Full-Stack</p>
         </div>
 
-        <div className="highlight-card">
+        <div className="stat-card">
           <h3>5+ Years</h3>
           <p>Hands-on development experience</p>
         </div>
 
-        <div className="highlight-card">
+        <div className="stat-card">
           <h3>5+ AI Apps</h3>
           <p>RAG • CV • LLM • NLP</p>
         </div>
-      </section>
+      </div>
 
-      {/* =============================
-          AI BOX (OPTIONAL)
-          Shows personality + connects to Chat page
-      ============================== */}
-      <section className="about-ai-box neon-outline">
-        <h3>Meet Radhika 2.0</h3>
-        <p>
-          My AI clone can answer questions about my experience, skills, or
-          projects — trained on my real resume + portfolio.
+      {/* LET'S CONNECT */}
+      <div className="connect-section">
+        <h2 className="section-heading">Let’s Connect</h2>
+
+        <p className="connect-text">
+          I'm always interested in discussing AI, technology, and new opportunities.
         </p>
 
-        <button
-          className="ai-learn-btn"
-          onClick={() => (window.location.href = "/chat")}
-        >
-          Chat with Radhika 2.0 →
-        </button>
-      </section>
+        <div className="connect-links">
+          <a
+            href="https://github.com/Radhikamangroliya"
+            target="_blank"
+            className="connect-btn"
+          >
+            GitHub
+          </a>
 
+          <a
+            href="https://www.linkedin.com/in/radhika-mangroliya-87aa75214/"
+            target="_blank"
+            className="connect-btn"
+          >
+            LinkedIn
+          </a>
+
+          <a href="mailto:radhikamangroliya0@gmail.com" className="connect-btn">
+            Email
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
