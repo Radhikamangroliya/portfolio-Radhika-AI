@@ -11,6 +11,7 @@ import About from "./pages/About.jsx";
 import Projects from "./pages/Projects.jsx";
 import Experience from "./pages/Experience.jsx";
 import Skills from "./pages/Skills.jsx";
+import Resume from "./pages/Resume.jsx";
 import ChatFull from "./pages/ChatFull.jsx";
 
 // --- Layout components ---
@@ -33,13 +34,15 @@ export default function AppRouter() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/chat" element={<ChatFull />} />
-      </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/projects" element={<Projects />} />
+  <Route path="/experience" element={<Experience />} />
+  <Route path="/skills" element={<Skills />} />
+  <Route path="/resume" element={<Resume />} />
+  <Route path="/chat" element={<ChatFull />} />
+</Routes>
+
 
       <Footer />
 

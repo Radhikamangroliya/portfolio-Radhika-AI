@@ -1,7 +1,8 @@
 /* -------------------------------------------------------------
-   Navbar.css — Neon floating navigation bar
+   Navbar.css — Clean Neon Navigation (Transparent + Solid)
 -------------------------------------------------------------- */
 
+/* ✅ Base navbar container */
 .nav-container {
   position: fixed;
   top: 0;
@@ -11,9 +12,26 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2000;
-  backdrop-filter: blur(12px);
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
 }
 
+/* ✅ Transparent navbar ONLY on Home page */
+.nav-transparent {
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* ✅ Solid navbar for all other pages */
+.nav-solid {
+  background: rgba(5, 8, 20, 0.92);
+  border-bottom: 1px solid rgba(120, 180, 255, 0.18);
+  box-shadow: 0 0 16px rgba(120, 180, 255, 0.12);
+}
+
+/* -------------------------------------------------------------
+   Logo
+-------------------------------------------------------------- */
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -25,6 +43,9 @@
   color: #bb86ff;
 }
 
+/* -------------------------------------------------------------
+   Navigation Links
+-------------------------------------------------------------- */
 .nav-right {
   display: flex;
   gap: 32px;
@@ -47,12 +68,16 @@
   text-shadow: 0 0 8px #6ab8ff;
 }
 
+/* -------------------------------------------------------------
+   Chat Button
+-------------------------------------------------------------- */
 .chat-btn {
   padding: 8px 16px;
   border: 1px solid #60a8ff;
   border-radius: 8px;
   color: #cfeaff;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .chat-btn:hover {

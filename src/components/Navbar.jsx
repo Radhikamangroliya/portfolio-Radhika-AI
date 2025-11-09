@@ -1,6 +1,5 @@
 // -------------------------------------------------------------------
-// Navbar.jsx
-// Radhika’s neon navigation bar (fixed, minimal, recruiter-friendly)
+// Navbar.jsx — Auto Transparent on Home, Solid on Other Pages
 // -------------------------------------------------------------------
 
 import React from "react";
@@ -10,11 +9,18 @@ import "./Navbar.css";
 export default function Navbar() {
   const location = useLocation();
 
+  // ✅ Transparent ONLY on home page
+  const isHome = location.pathname === "/";
+
+  const containerClass = isHome
+    ? "nav-container nav-transparent"
+    : "nav-container nav-solid";
+
   const isActive = (path) =>
     location.pathname === path ? "nav-link active" : "nav-link";
 
   return (
-    <nav className="nav-container">
+    <nav className={containerClass}>
       <div className="nav-left">
         <Link to="/" className="logo">
           Radhika <span className="accent">AI</span>
@@ -36,6 +42,10 @@ export default function Navbar() {
 
         <Link className={isActive("/skills")} to="/skills">
           Skills
+        </Link>
+
+        <Link className={isActive("/resume")} to="/resume">
+          Resume
         </Link>
 
         <Link className="chat-btn" to="/chat">
