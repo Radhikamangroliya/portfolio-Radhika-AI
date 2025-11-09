@@ -1,100 +1,94 @@
+// -------------------------------------------------------------------
+// About.jsx — Personal Bio + Stats + Contact Section
+// -------------------------------------------------------------------
+
 import React from "react";
 import "./About.css";
 
 export default function About() {
   return (
     <div className="about-container">
-      <h1 className="about-title">About Me</h1>
 
-      <p className="about-subtitle">
+      <h1 className="about-title">About Me</h1>
+      <p className="about-sub">
         A builder at heart — I use AI, data, and code to create powerful,
         human-centered digital experiences.
       </p>
 
-      {/* WHO I AM CARD */}
-      <div className="about-card">
-        <h2 className="section-heading">Who I Am</h2>
+      {/* WHO I AM */}
+      <section className="about-card">
+        <h2 className="section-title">Who I Am</h2>
 
-          <p>I’m <strong>Radhika Mangroliya</strong>, an AI Engineer and full-stack developer who loves turning complex ideas into intelligent, real-world solutions.
-          </p>
+        <p className="about-text">
+          I’m <strong>Radhika Mangroliya</strong>, an AI/ML engineer and full-stack developer
+          who loves turning ideas into real, scalable applications.
+        </p>
 
-          <p>A focused and enthusiastic builder, I work at the intersection of <strong> AI, machine learning, automation, and product engineering</strong>.
-            My passion for this field comes from deeply understanding core concepts
-            and applying them across real projects — from RAG systems and LLM apps
-            to cloud-based automation and full-stack web experiences.
-          </p>
+        <p className="about-text">
+          Passionate about the intersection of <strong>AI, automation, UX, and
+          cloud engineering</strong> — I enjoy building intelligent systems that
+          solve real business problems.
+        </p>
 
-          <p>
-            I thrive when solving meaningful problems, designing clean user
-            experiences, and building systems that are smart, scalable, and impactful.
-          </p>
+        <p className="about-text">
+          Whether it's <strong>building RAG systems</strong>, deploying apps with
+          <strong> CI/CD</strong>, or designing clean front-end experiences,
+          I thrive where creativity meets engineering.
+        </p>
 
+        <p className="about-text">
+          My mission: <strong>use AI to make digital experiences smarter,
+          faster, and more personal.</strong>
+        </p>
 
-        {/* RESUME BUTTONS */}
-        <div className="resume-buttons">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-view"
-          >
-            View Resume
-          </a>
+        {/* ✅ Resume View/Download */}
+        <a href="/resume.pdf" target="_blank" className="resume-button">
+          View / Download Resume →
+        </a>
+      </section>
 
-          <a href="/resume.pdf" download className="btn-download">
-            Download Resume
-          </a>
-        </div>
-      </div>
-
-      {/* STATS */}
-      <div className="stats-container">
-        <div className="stat-card">
+      {/* Stats row */}
+      <div className="stats-row">
+        <div className="stat-box">
           <h3>20+ Projects</h3>
-          <p>AI • ML • Data • Full-Stack</p>
+          <p>AI • ML • Full-Stack</p>
         </div>
 
-        <div className="stat-card">
+        <div className="stat-box">
           <h3>5+ Years</h3>
-          <p>Hands-on development experience</p>
+          <p>Hands-on development</p>
         </div>
 
-        <div className="stat-card">
+        <div className="stat-box">
           <h3>5+ AI Apps</h3>
           <p>RAG • CV • LLM • NLP</p>
         </div>
       </div>
 
-      {/* LET'S CONNECT */}
-      <div className="connect-section">
-        <h2 className="section-heading">Let’s Connect</h2>
+      {/* ================= CONTACT CARD ================= */}
+      <div className="about-card contact-card">
+        <h2 className="section-title">Let’s Connect</h2>
 
-        <p className="connect-text">
-          I'm always interested in discussing AI, technology, and new opportunities.
+        <p className="about-text small">
+          I’m always open to discussing AI, technology, collaboration, or new opportunities.
         </p>
 
-        <div className="connect-links">
-          <a
-            href="https://github.com/Radhikamangroliya"
-            target="_blank"
-            className="connect-btn"
-          >
-            GitHub
+        <div className="contact-buttons">
+          <a className="blue-btn" href="mailto:radhikamangroliya0@gmail.com">
+            Email →
           </a>
 
-          <a
-            href="https://www.linkedin.com/in/radhika-mangroliya-87aa75214/"
-            target="_blank"
-            className="connect-btn"
-          >
-            LinkedIn
+          <a className="blue-btn" href="https://www.linkedin.com/in/radhika-mangroliya-87aa75214/" target="_blank">
+            LinkedIn →
           </a>
 
-          <a href="mailto:radhikamangroliya0@gmail.com" className="connect-btn">
-            Email
+          <a className="blue-btn" href="https://github.com/Radhikamangroliya" target="_blank">
+            GitHub →
           </a>
         </div>
       </div>
+
+
     </div>
   );
 }

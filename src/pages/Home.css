@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------
-   Home.css — Final Hero Layout + Particles + Parallax Grid
+   Home.css — Final Hero Layout + Parallax + Neon Contact Button
 -------------------------------------------------------------- */
 
 .home-wrapper {
@@ -16,7 +16,7 @@
 }
 
 /* ============================
-   Background layers
+   Background Layers
 =============================== */
 
 .background-layers {
@@ -36,19 +36,18 @@
   pointer-events: none;
 }
 
-/* ✅ Stars layer from local image */
+/* Stars */
 .stars-bg {
   background-image: url("/src/assets/bg/stars-bg.png");
-  opacity: 0.35;
+  opacity: 0.25;
 }
 
-/* ✅ Neon grid from local image */
+/* Neon grid */
 .grid-bg {
   background-image: url("/src/assets/bg/neon-grid-bg.png");
-  opacity: 0.45;
+  opacity: 0.35;
   background-position: bottom;
 }
-
 
 /* ============================
    Floating Particles
@@ -85,9 +84,8 @@
   }
 }
 
-
 /* ============================
-   Left Hero Content
+   Left Hero Section
 =============================== */
 
 .hero-left {
@@ -114,9 +112,32 @@
   color: #cf8aff;
 }
 
+/* ✅ CONTACT BUTTON — NEON BLUE GLOW */
+.contact-btn {
+  margin-top: 35px;
+  padding: 14px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e6f3ff;
+  background: rgba(30, 58, 138, 0.45);
+  border: 2px solid #7bc6ff;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+  text-shadow: 0 0 8px #7bc6ff;
+  box-shadow: 0 0 18px rgba(123, 198, 255, 0.45);
+}
+
+.contact-btn:hover {
+  background: rgba(50, 90, 180, 0.55);
+  box-shadow: 0 0 25px #9ad4ff;
+  border-color: #b5e5ff;
+  transform: translateY(-2px);
+}
 
 /* ============================
-   AI Card
+   AI CARD
 =============================== */
 
 .hero-ai-card {
@@ -147,7 +168,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8dd3ff;
+  color: #9fdfff;
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 25px;
@@ -156,6 +177,7 @@
 .ai-desc {
   font-size: 18px;
   color: #dcd2ff;
+  margin-bottom: 20px;
 }
 
 .ai-ask-btn {
@@ -167,7 +189,6 @@
   color: #c6a3ff;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 25px;
   transition: 0.3s;
 }
 
@@ -177,7 +198,7 @@
 }
 
 /* ============================
-   Responsive Layout
+   Responsive
 =============================== */
 
 @media (max-width: 900px) {

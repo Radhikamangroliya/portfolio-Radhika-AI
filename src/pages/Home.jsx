@@ -1,11 +1,12 @@
 // -------------------------------------------------------------
-// Home.jsx — Neon Hero + Parallax Grid + Stars + Particles
+// Home.jsx — Final Neon Hero + AI Card + Contact Button
 // -------------------------------------------------------------
 
 import React, { useEffect } from "react";
 import "./Home.css";
 
 export default function Home() {
+
   // ===== Parallax Scroll Effect =====
   useEffect(() => {
     const grid = document.querySelector(".grid-bg");
@@ -21,12 +22,16 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to contact area in About section
+  const goToContact = () => {
+    window.location.href = "/about#contact-section";
+  };
+
   return (
     <div className="home-wrapper">
 
       {/* ===== BACKGROUND LAYERS ===== */}
       <div className="background-layers">
-        {/* Floating particles */}
         <div className="particles-layer">
           {[...Array(25)].map((_, i) => (
             <div
@@ -42,12 +47,11 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Stars + Grid */}
         <div className="stars-bg"></div>
         <div className="grid-bg"></div>
       </div>
 
-      {/* ===== LEFT HERO SECTION ===== */}
+      {/* ===== LEFT SECTION ===== */}
       <section className="hero-left">
         <h1 className="hero-title">
           RADHIKA <br /> MANGROLIYA
@@ -60,6 +64,11 @@ export default function Home() {
         <p className="hero-tagline">
           Your AI-powered career assistant.
         </p>
+
+        {/* ✅ NEW CONTACT ME BUTTON */}
+        <button className="contact-btn" onClick={goToContact}>
+          Contact Me →
+        </button>
       </section>
 
       {/* ===== RIGHT AI CARD ===== */}
@@ -68,7 +77,9 @@ export default function Home() {
 
         <div className="ai-circle">AI</div>
 
-        <p className="ai-desc">Hello! Ask me anything about Radhika.</p>
+        <p className="ai-desc">
+          Hello! Ask me anything about Radhika.
+        </p>
 
         <button
           className="ai-ask-btn"
