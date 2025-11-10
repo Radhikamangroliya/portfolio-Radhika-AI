@@ -9,6 +9,23 @@ const categories = [
   {
     name: "🧠 AI Projects",
     projects: [
+      
+      {
+        title: "Agent Chatbot — Portfolio Assistant",
+        desc: "AI chatbot with RAG and custom prompt chaining built into portfolio.",
+        img: "/projects/agent.png",
+        tags: ["Agents", "LLMs", "RAG", "AI Assistant"],
+        github: "https://github.com/Radhikamangroliya/portfolio-Radhika-AI",
+      },
+
+      {
+        title: "CareerFit AI — Resume & Job Match Assistant",
+        desc: "AI-powered platform that generates resumes and finds matching jobs using NLP, embeddings, and vector search.",
+        img: "/projects/careerfit.png",
+        tags: ["AI", "NLP", "Vector DB", "Fullstack"],
+        github: "https://github.com/Radhikamangroliya/careerfit-ai",
+      },
+
       {
         title: "MARS — Multi-Agent Recommender System",
         desc: "AI multi-agent chatbot for movie recommendations using Gemini LLMs, FAISS vector search, and RAG pipeline.",
@@ -23,20 +40,8 @@ const categories = [
         tags: ["Python", "NLP", "Streamlit"],
         github: "https://github.com/Radhikamangroliya",
       },
-      {
-        title: "Agent Chatbot — Portfolio Assistant",
-        desc: "AI chatbot with RAG and custom prompt chaining built into portfolio.",
-        img: "/projects/agent.png",
-        tags: ["Agents", "LLMs", "RAG", "AI Assistant"],
-        github: "https://github.com/Radhikamangroliya/portfolio-Radhika-AI",
-      },
-      {
-        title: "CareerFit AI — Resume & Job Match Assistant",
-        desc: "AI-powered platform that generates resumes and finds matching jobs using NLP, embeddings, and vector search.",
-        img: "/projects/careerfit.png",
-        tags: ["AI", "NLP", "Vector DB", "Fullstack"],
-        github: "https://github.com/Radhikamangroliya/careerfit-ai",
-      },
+    
+      
     ],
   },
 
