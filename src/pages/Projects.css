@@ -1,11 +1,17 @@
-/* Page */
+/* ============================================= */
+/* PAGE WRAPPER */
+/* ============================================= */
+
 .projects-wrapper {
   padding: 120px 50px;
   background: #060b18;
   color: white;
 }
 
-/* Title */
+/* ============================================= */
+/* TITLES */
+/* ============================================= */
+
 .projects-title {
   font-size: 48px;
   text-align: center;
@@ -21,25 +27,54 @@
   margin-bottom: 70px;
 }
 
-/* Horizontal section (equal spacing for all) */
+/* CATEGORY HEADER */
+.category-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 40px 0 35px;
+  padding-left: 10px;
+  color: #dce7ff;
+  text-shadow: 0 0 12px rgba(138, 180, 255, 0.4);
+  border-left: 4px solid #8ab4ff;
+}
+
+/* ============================================= */
+/* PROJECT SECTIONS */
+/* ============================================= */
+
+.projects-list {
+  margin-bottom: 80px; /* space after each category */
+}
+
 .project-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;                /* ✅ Equal spacing */
-  margin-bottom: 100px;    /* ✅ Same margin for all sections */
+  gap: 60px;
+  margin-bottom: 100px;
   padding: 45px;
   border-radius: 22px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(20px);
+  transition: 0.3s ease;
 }
 
-/* Left side */
+/* subtle hover glow */
+.project-section:hover {
+  border-color: rgba(138, 180, 255, 0.25);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================= */
+/* PROJECT LEFT SIDE */
+/* ============================================= */
+
 .project-left {
   width: 50%;
 }
 
+.project-left h3,
 .project-left h2 {
   font-size: 32px;
   font-weight: 700;
@@ -53,7 +88,7 @@
   color: #bcd4ff;
 }
 
-/* Tags */
+/* TAGS */
 .project-tags {
   margin: 20px 0;
   display: flex;
@@ -70,7 +105,7 @@
   color: #a8c4ff;
 }
 
-/* Button */
+/* BUTTON */
 .project-btn {
   display: inline-block;
   margin-top: 15px;
@@ -87,36 +122,42 @@
   background: #b5d1ff;
 }
 
-/* Right side */
+/* ============================================= */
+/* PROJECT RIGHT SIDE */
+/* ============================================= */
+
 .project-right {
   width: 45%;
 }
 
-/* ✅ FORCE ALL IMAGES TO 4:3 RATIO */
+/* force 4:3 ratio image container */
 .project-right .img-tilt {
   width: 100%;
-  aspect-ratio: 4 / 3;     /* ✅ Enforce 4:3 image ratio */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 16px;
   perspective: 1000px;
 }
 
-/* ✅ Keep all images clean + same size */
+/* ensure images look clean and consistent */
 .project-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* ✅ Perfect crop without distortion */
+  object-fit: cover;
   border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 3D tilt */
+/* 3D HOVER */
 .img-tilt:hover img {
   transform: rotateY(12deg) rotateX(6deg) scale(1.03);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* Mobile view */
+/* ============================================= */
+/* RESPONSIVE */
+/* ============================================= */
+
 @media (max-width: 900px) {
   .project-section {
     flex-direction: column;
@@ -124,8 +165,14 @@
     gap: 30px;
   }
 
-  .project-left, 
+  .project-left,
   .project-right {
     width: 100%;
+  }
+
+  .category-title {
+    text-align: left;
+    padding-left: 5px;
+    font-size: 28px;
   }
 }
