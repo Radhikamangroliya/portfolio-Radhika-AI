@@ -40,8 +40,9 @@ export default function Navbar() {
           Experience
         </Link>
 
-        <Link className={isActive("/skills")} to="/skills">
-          Skills
+        {/* ✅ FIXED — Changed text from Skills ➝ Services */}
+        <Link className={isActive("/services")} to="/services">
+          Services
         </Link>
 
         <Link className={isActive("/resume")} to="/resume">

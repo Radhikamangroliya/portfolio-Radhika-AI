@@ -1,106 +1,129 @@
-/* ---------------------------------------------------------------------------
-   ExperienceTimeline.css — Neon vertical timeline UI
-   Human-designed, recruiter-friendly, glowing & animated ✨
---------------------------------------------------------------------------- */
+/* ============================================================
+   CONNECTED ALTERNATING TIMELINE — PERFECT MATCH TO REFERENCE
+============================================================ */
 
-.timeline-container {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  margin: 40px auto;
-  max-width: 1100px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 140px 40px 1fr;
-  align-items: flex-start;
-}
-
-/* LEFT SIDE — YEAR -------------------------------------------------------- */
-.timeline-year {
-  color: #9fc7ff;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 6px;
-}
-
-/* MIDDLE — LINE ----------------------------------------------------------- */
-.timeline-line {
+.alt-timeline-container {
   position: relative;
-  width: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 0;
 }
 
-.timeline-line::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 100%;
-  background: rgba(120, 180, 255, 0.5);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* DOT --------------------------------------------------------------------- */
-.timeline-dot {
+/* CENTER LINE */
+.alt-timeline-line {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   top: 0;
-  width: 16px;
-  height: 16px;
-  background: #6ec8ff;
+  bottom: 0;
+  width: 3px;
+  background: rgba(138,180,255,0.35);
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* EACH ROW */
+.alt-timeline-item {
+  width: 100%;
+  position: relative;
+  margin: 70px 0;
+}
+
+/* DOT */
+.alt-dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -8px);
+  width: 18px;
+  height: 18px;
+  background: #8ab4ff;
   border-radius: 50%;
-  box-shadow: 0 0 12px #6ec8ff;
+  border: 3px solid rgba(138,180,255,0.5);
+  box-shadow: 0 0 12px rgba(138,180,255,0.6);
+  z-index: 20;
 }
 
-/* RIGHT SIDE — BOX -------------------------------------------------------- */
-.timeline-content {
-  background: rgba(15, 20, 50, 0.65);
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(120, 180, 255, 0.4);
-  backdrop-filter: blur(8px);
-  transition: 0.25s;
+/* YEAR directly under DOT */
+.alt-year {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: #8ab4ff;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.box-glow:hover {
-  box-shadow: 0 0 16px rgba(120, 180, 255, 0.6);
-  border-color: rgba(150, 200, 255, 0.6);
+/* LEFT ITEM */
+.alt-timeline-item.left .alt-content-box {
+  width: 40%;
+  margin-right: auto;
+  margin-left: 0;
+  transform: translateX(-20px);
+  text-align: left;
+}
+
+/* RIGHT ITEM */
+.alt-timeline-item.right .alt-content-box {
+  width: 40%;
+  margin-left: auto;
+  margin-right: 0;
+  transform: translateX(20px);
+  text-align: left;
+}
+
+/* CARD */
+.alt-content-box {
+  padding: 25px 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(138,180,255,0.25);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.alt-content-box:hover {
   transform: translateY(-4px);
+  border-color: rgba(138,180,255,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
 }
 
-/* TEXT STYLES ------------------------------------------------------------- */
+/* TITLE, COMPANY */
 .timeline-role {
-  color: #def1ff;
   font-size: 20px;
+  font-weight: 700;
+  color: #dce7ff;
+  margin-bottom: 4px;
 }
 
 .timeline-company {
-  color: #87b8ff;
   font-size: 15px;
+  color: #b5c9ff;
   margin-bottom: 14px;
 }
 
 .timeline-bullets {
-  margin-left: 16px;
+  color: #bcd4ff;
+  margin-left: 20px;
   margin-bottom: 16px;
-  color: #a8c7ff;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-/* TAGS -------------------------------------------------------------------- */
+/* TAGS */
 .timeline-tags {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .timeline-tag {
-  background: rgba(50, 100, 255, 0.25);
-  border: 1px solid rgba(100, 150, 255, 0.4);
-  padding: 5px 12px;
+  background: rgba(138,180,255,0.15);
+  border: 1px solid rgba(138,180,255,0.3);
+  color: #dce7ff;
   font-size: 12px;
-  border-radius: 8px;
-  color: #d7e8ff;
+  padding: 6px 12px;
+  border-radius: 10px;
 }

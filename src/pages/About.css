@@ -1,24 +1,28 @@
+/* ===== Background ===== */
 .about-container {
   padding: 120px 80px;
+  background: #0b0c10; /* ✅ matte black */
   color: white;
 }
 
+/* ===== Header ===== */
 .about-title {
+  font-size: 48px;
   text-align: center;
-  font-size: 70px;
   font-weight: 800;
-  color: #bfe0ff;
-  text-shadow: 0 0 25px #6cb6ff;
+  margin-bottom: 10px;
+  color: #8ab4ff; /* SAME BLUE as Projects title */
+  text-shadow: 0 0 18px rgba(138, 180, 255, 0.55);
 }
 
 .about-sub {
-  margin-top: 10px;
   text-align: center;
-  font-size: 22px;
-  color: #a7cfff;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #b7cfff;
 }
 
-/* ============ TWO COLUMN SECTION ============ */
+/* ===== Two Column Section ===== */
 .about-section {
   margin-top: 70px;
   display: flex;
@@ -27,43 +31,42 @@
   gap: 60px;
 }
 
-/* LEFT SIDE */
 .about-left {
   width: 55%;
 }
 
 .section-title {
-  font-size: 32px;
-  color: #9bd2ff;
+  font-size: 28px;
+  color: #bde0ff;
   margin-bottom: 20px;
 }
 
 .about-text {
   font-size: 18px;
-  color: #d8e9ff;
-  margin-bottom: 16px;
   line-height: 1.6;
+  color: #e3edff;
+  margin-bottom: 18px;
 }
 
-/* DOWNLOAD BUTTON */
+/* Button */
 .resume-button {
   margin-top: 25px;
   display: inline-block;
-  padding: 14px 32px;
+  padding: 12px 30px;
   border-radius: 10px;
-  border: 1px solid #7fb4ff;
-  background: rgba(100, 140, 255, 0.1);
-  color: #b7ddff;
+  border: 1px solid #6cb8ff;
+  background: rgba(50, 90, 255, 0.12);
+  color: #cde7ff;
   transition: 0.3s;
 }
 
 .resume-button:hover {
-  background: rgba(120, 160, 255, 0.3);
-  box-shadow: 0 0 20px #88c8ff;
+  background: rgba(60, 120, 255, 0.25);
+  box-shadow: 0 0 15px #79c0ff;
   transform: translateY(-3px);
 }
 
-/* RIGHT IMAGE */
+/* Right Image */
 .about-right {
   width: 45%;
   display: flex;
@@ -73,42 +76,100 @@
 .about-3d-img {
   width: 100%;
   max-width: 420px;
-  animation: floatUp 1.6s ease-out;
 }
 
-/* Smooth animation */
-@keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Stats row */
+/* ===== Stats ===== */
 .stats-row {
-  margin-top: 80px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .stat-box {
-  padding: 30px;
-  width: 260px;
-  background: rgba(40, 50, 80, 0.5);
+  padding: 28px;
+  width: 240px;
   border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(140, 180, 255, 0.25);
+  box-shadow: 0 0 25px rgba(100, 150, 255, 0.12);
   text-align: center;
+  backdrop-filter: blur(6px);
 }
 
 .stat-box h3 {
-  font-size: 28px;
-  color: #c1e4ff;
+  font-size: 26px;
+  color: #d7ecff;
 }
 
 .stat-box p {
-  color: #a3c0ff;
+  color: #a7c7ff;
+}
+
+/* ===== Skills ===== */
+.skills-title {
+  margin-top: 110px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: #cfe7ff;
+  text-shadow: 0 0 16px #65b3ff;
+}
+
+/* Grid */
+.skills-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+/* Card */
+.skill-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(120, 160, 255, 0.25);
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(90, 150, 255, 0.12);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 22px rgba(110, 180, 255, 0.35);
+}
+
+/* Icons — original colors preserved */
+.skill-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 16px;
+  color: #e3edff;
+}
+/* ✅ 3D Avatar Entrance Animation */
+.about-3d-img {
+  width: 100%;
+  max-width: 430px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: avatarEnter 1.2s ease-out forwards;
+}
+
+@keyframes avatarEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9) rotate(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
 }

@@ -1,89 +1,85 @@
-/* ----------------------------------------------------------
-   Modern Floating Chat Window
------------------------------------------------------------ */
+/* ---------------------------------------------------------
+   Floating Popup Chat — Like Chintak’s AI
+---------------------------------------------------------- */
 
 .chat-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  background: #030613;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 80px;
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  z-index: 99999;
 }
 
-/* MAIN BOX */
+/* MINI POPUP CARD */
 .chat-box {
-  width: 750px;
-  max-width: 90%;
-  height: 78vh;
-  background: rgba(20, 32, 60, 0.55);
-  border-radius: 22px;
-  border: 1px solid rgba(110, 140, 255, 0.35);
-  box-shadow: 0 0 35px rgba(110, 140, 255, 0.25);
+  width: 380px;
+  height: 520px;
+
+  background: rgba(18, 25, 45, 0.85);
+  border: 1px solid rgba(120, 140, 255, 0.35);
+  backdrop-filter: blur(22px);
+
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(120, 140, 255, 0.25);
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  backdrop-filter: blur(20px);
-  position: relative;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
 /* HEADER */
 .chat-header {
-  padding: 22px;
-  background: linear-gradient(90deg, #7c4dff, #3b9dff);
-  color: white;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-  border-top-left-radius: 22px;
-  border-top-right-radius: 22px;
+  padding: 15px 18px;
+  background: linear-gradient(90deg, #7a4dff, #3b9dff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
   position: relative;
 }
 
-.chat-header h2 {
-  margin: 0;
-  font-weight: 700;
-  font-size: 20px;
-}
-
 .chat-header p {
-  margin: 5px 0 0;
+  font-size: 13px;
   opacity: 0.9;
+  margin-top: 4px;
 }
 
-/* CLOSE BUTTON */
+/* Close Button */
 .close-chat {
   position: absolute;
-  right: 18px;
-  top: 18px;
-  background: rgba(255,255,255,0.2);
+  right: 14px;
+  top: 14px;
+  width: 28px;
+  height: 28px;
   border: none;
-  color: white;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
   cursor: pointer;
-  transition: 0.2s;
+  font-size: 16px;
 }
 .close-chat:hover {
-  background: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.4);
 }
 
-/* MESSAGE ZONE */
+/* MESSAGES AREA */
 .chat-messages {
   flex: 1;
-  padding: 20px;
+  padding: 14px;
   overflow-y: auto;
 }
 
-/* BUBBLES */
+/* Bubbles */
 .bubble {
-  max-width: 75%;
-  margin-bottom: 18px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  font-size: 15px;
-  line-height: 1.4;
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 .bubble.user {
@@ -94,49 +90,44 @@
 
 .bubble.ai {
   background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
   color: #e4e9ff;
 }
 
-/* Loader */
+/* Loading Dots */
 .typing-dots {
-  color: #aaa;
-  margin-bottom: 10px;
+  color: #bbb;
+  margin-left: 10px;
 }
 
 /* INPUT BAR */
 .chat-input {
   display: flex;
-  padding: 14px;
+  padding: 10px;
   gap: 10px;
   background: rgba(255,255,255,0.05);
-  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .chat-input input {
   flex: 1;
-  padding: 12px 15px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-}
-
-.chat-input input::placeholder {
-  color: #c7d3ff;
+  color: #fff;
+  font-size: 14px;
 }
 
 .chat-input button {
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: #6a8aff;
+  padding: 10px 16px;
+  background: #7c9dff;
+  border-radius: 10px;
   border: none;
+  color: #fff;
   cursor: pointer;
-  color: white;
   font-weight: 600;
-  transition: 0.2s;
 }
 
 .chat-input button:hover {
-  background: #89a8ff;
+  background: #9db5ff;
 }

@@ -1,5 +1,5 @@
 // -------------------------------------------------------------
-// ChatFull.jsx — Modern Floating Chat UI (Like your screenshot)
+// ChatFull.jsx — Floating Popup Chat (Like Chintak's)
 // -------------------------------------------------------------
 
 import React, { useState, useRef, useEffect } from "react";
@@ -11,13 +11,12 @@ export default function ChatFull() {
   const [messages, setMessages] = useState([
     {
       sender: "ai",
-      text: "Hi! I'm **Radhika 2.0**, your AI assistant. Ask me anything about Radhika’s projects, skills, experience, or internships!",
+      text: "Hi! I'm **Radhika AI**, ask me anything about Radhika’s experience, skills or projects!",
     },
   ]);
 
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
   const bottomRef = useRef(null);
 
   useEffect(() => {
@@ -29,28 +28,25 @@ export default function ChatFull() {
     if (!input.trim()) return;
 
     const userMessage = { sender: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((m) => [...m, userMessage]);
     setInput("");
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/ask", {
-        question: userMessage.text,
+      const r = await axios.post("http://localhost:8000/ask", {
+        question: input,
       });
 
       const aiMessage = {
         sender: "ai",
-        text: response.data.answer || "I'm not sure — try asking another question!",
+        text: r.data.answer || "I'm not sure, try again!",
       };
 
-      setMessages((prev) => [...prev, aiMessage]);
+      setMessages((m) => [...m, aiMessage]);
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          sender: "ai",
-          text: "⚠️ Backend offline — please start FastAPI!",
-        },
+      setMessages((m) => [
+        ...m,
+        { sender: "ai", text: "⚠️ Backend offline — start FastAPI server!" },
       ]);
     } finally {
       setIsLoading(false);
@@ -59,10 +55,8 @@ export default function ChatFull() {
 
   return (
     <div className="chat-wrapper">
-
-      {/* ✅ Floating Chat Box */}
       <div className="chat-box">
-        
+
         {/* ✅ Header */}
         <div className="chat-header">
           <h2>Chat with AI</h2>
@@ -82,11 +76,10 @@ export default function ChatFull() {
           ))}
 
           {isLoading && <div className="typing-dots">• • •</div>}
-
           <div ref={bottomRef} />
         </div>
 
-        {/* ✅ Message Input */}
+        {/* ✅ Input */}
         <form className="chat-input" onSubmit={sendMessage}>
           <input
             type="text"
@@ -94,9 +87,9 @@ export default function ChatFull() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-
           <button type="submit">Send</button>
         </form>
+
       </div>
     </div>
   );

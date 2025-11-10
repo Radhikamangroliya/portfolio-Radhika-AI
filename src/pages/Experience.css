@@ -1,54 +1,71 @@
-/* -------------------------------------------------------------
-   Experience.css — Full Experience Page Styling
-   Clean neon theme matching the entire portfolio design
--------------------------------------------------------------- */
+/* ============================================================
+   EXPERIENCE PAGE — Matches SERVICES + PROJECTS Theme
+   Clean • Minimal • Professional
+============================================================ */
 
 /* PAGE WRAPPER */
 .experience-wrapper {
-  padding: 80px 20px;
+  padding: 120px 50px;
   min-height: 100vh;
-  background: #0a0f1f;
-  color: #dbe9ff;
+  background: #060b18; /* same as services/projects */
+  color: white;
 }
 
-/* HEADER SECTION */
+/* HEADER */
 .experience-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .experience-title {
-  font-size: 42px;
-  font-weight: 700;
-  color: #cfe6ff;
+  font-size: 48px;
+  font-weight: 800;
+  color: #8ab4ff; 
+  text-shadow: 0 0 18px rgba(138, 180, 255, 0.6);
   margin-bottom: 10px;
 }
 
 .experience-subtitle {
   font-size: 18px;
-  color: #8fb4ff;
-  max-width: 700px;
+  color: #b5c9ff;
+  max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* TIMELINE WRAPPER (parent container is in ExperienceTimeline.css) */
+/* SECTION HEADINGS (Work + Education) */
+.section-label {
+  font-size: 32px;
+  font-weight: 700;
+  color: #dce7ff;
+  margin: 50px 0 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  font-size: 28px;
+  color: #8ab4ff;
+  text-shadow: 0 0 10px rgba(138, 180, 255, 0.4);
+}
+
+/* TIMELINE WRAPPER */
 .experience-timeline-section {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
-/* Small screens optimization */
-@media (max-width: 768px) {
-  .experience-title {
-    font-size: 34px;
-  }
-
-  .experience-subtitle {
-    font-size: 16px;
-    padding: 0 15px;
-  }
-
+/* RESPONSIVE */
+@media (max-width: 900px) {
   .experience-wrapper {
-    padding: 60px 15px;
+    padding: 100px 30px;
+  }
+
+  .experience-title {
+    font-size: 40px;
+  }
+
+  .section-label {
+    font-size: 26px;
   }
 }

@@ -10,7 +10,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Projects from "./pages/Projects.jsx";
 import Experience from "./pages/Experience.jsx";
-import Skills from "./pages/Skills.jsx";
+import Services from "./pages/Services.jsx";
 import Resume from "./pages/Resume.jsx";
 import ChatFull from "./pages/ChatFull.jsx";
 
@@ -38,7 +38,7 @@ export default function AppRouter() {
   <Route path="/about" element={<About />} />
   <Route path="/projects" element={<Projects />} />
   <Route path="/experience" element={<Experience />} />
-  <Route path="/skills" element={<Skills />} />
+  <Route path="/services" element={<Services />} />
   <Route path="/resume" element={<Resume />} />
   <Route path="/chat" element={<ChatFull />} />
 </Routes>
